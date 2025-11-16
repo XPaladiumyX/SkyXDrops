@@ -1,17 +1,18 @@
 package skyxnetwork.skyXDrops;
 
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class SkyXDrops extends JavaPlugin {
+public class SkyXDrops extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
-
+        getServer().getPluginManager().registerEvents(new SkyXDropsListener(), this);
+        Bukkit.getLogger().info("[SkyXDrops] Enabled!");
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        Bukkit.getLogger().info("[SkyXDrops] Disabled!");
     }
 }
